@@ -34,7 +34,7 @@ if (isset($_POST['submit'])) {
                     $vehicleType = $_POST['vehicleType'];
                     $price = $_POST['price'];
                     $fuelType = $_POST['fuelType'];
-                    $userId = $_SESSION['user_id']; // Assuming user_id is stored in the session
+                    $userId = $_SESSION['userid']; // Assuming user_id is stored in the session
 
                     $sql = "INSERT INTO cars (car_image_path, brand, year, model, vehicle_type, price, fuel_type, user_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
                     $stmt = mysqli_stmt_init($conn);
@@ -42,7 +42,7 @@ if (isset($_POST['submit'])) {
                         echo "SQL error. Please try again later.";
                         exit();
                     } else {
-                        mysqli_stmt_bind_param($stmt, "ssisssdi", $carImagePath, $brand, $year, $model, $vehicleType, $price, $fuelType, $userId);
+                        mysqli_stmt_bind_param($stmt, "ssisssss", $carImagePath, $brand, $year, $model, $vehicleType, $price, $fuelType, $userId);
                         mysqli_stmt_execute($stmt);
                         header("Location: ../index.php?upload=success");
                         exit();

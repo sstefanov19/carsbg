@@ -12,7 +12,12 @@ if (session_status() === PHP_SESSION_NONE) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CarSeller</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    
+    <style>
+        body {
+            padding-top: 56px; /* Adjust this value based on the height of your navbar */
+        }
+      
+    </style>
 </head>
 
 <body>
@@ -53,5 +58,11 @@ if (session_status() === PHP_SESSION_NONE) {
             </ul>
         </div>
     </nav>
+
+ 
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -50,14 +50,18 @@ if ($row = mysqli_fetch_assoc($result)) {
             <div class="col-lg-12 text-center">
                 <img src="<?php echo $imagePath; ?>" alt="Car Image" class="car-image img-fluid">
             </div>
-            <div class="col-lg-8 mx-auto">
+            <div class="col-lg-12 mx-auto">
                 <div class="details">
                     <h2><?php echo $brand . ' ' . $model; ?></h2>
                     <p><strong>Year:</strong> <?php echo $year; ?></p>
                     <p><strong>Vehicle Type:</strong> <?php echo $vehicleType; ?></p>
                     <p><strong>Price:</strong> $<?php echo number_format($price, 2); ?></p>
                     <p><strong>Fuel Type:</strong> <?php echo $fuelType; ?></p>
-                    <button class="btn btn-primary">Buy now</button>
+                    <form action="buy-car.php" method="get">
+                                                <input type="hidden" name="carId"
+                                                    value="<?php echo htmlspecialchars($post['id']); ?>">
+                                                <button type="submit" class="btn btn-primary">Buy now</button>
+                                            </form>
                 </div>
             </div>
         </div>
